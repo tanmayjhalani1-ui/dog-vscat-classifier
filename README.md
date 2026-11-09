@@ -1,3 +1,13 @@
+<div align="center">
+  <img src="assets/portfolio-banner.svg" alt="Dog vs Cat Classification — Tanmay Jhalani" width="100%" />
+</div>
+
+<div align="center">
+  <strong>Designed and engineered by Tanmay Jhalani</strong> · <a href="https://github.com/tanmayjhalani1-ui">GitHub Profile</a>
+</div>
+
+---
+
 # Dog vs Cat Image Classification
 
 An end-to-end CNN image-classification project extending the original notebook into a reproducible training and inference application. It includes CNN architecture comparison, MLflow experiment tracking, Streamlit, FastAPI, and Docker.
