@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Compile application
+        run: python -m compileall -q src api app.py
+      - name: Verify model construction
+        run: |
+          python - <<'PY'
+          from src.train import build_model
+          model = build_model("cnn_v1")
+          assert model.output_shape == (None, 1)
+          print("CNN architecture initialized.")
+          PY
