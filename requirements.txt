@@ -1,0 +1,8 @@
+tensorflow-cpu>=2.16,<2.19
+numpy>=1.26,<3
+Pillow>=10,<12
+mlflow>=2.12,<3
+streamlit>=1.35,<2
+fastapi>=0.110,<1
+uvicorn[standard]>=0.29,<1
+python-multipart>=0.0.9
